@@ -43,7 +43,7 @@
                         @endforeach
                     </select>
 
-                    <label for="hora">Informe uma hora (formato HH:MM):</label>
+                    <label for="hora">Informe o Horário (formato HH:MM):</label>
                     <input type="text" id="hora" name="hora" placeholder="Ex: 09:30" required>
 
                     <input type="submit" value="Registrar Horas">
