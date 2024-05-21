@@ -10,7 +10,7 @@ class FuncionariosController extends Controller
 {
     public function index()
     {
-        $funcionarios = TbFuncionario ::all();
+        $funcionarios = TbFuncionario::with('departamento')->get();
         return view('funcionarios.index', ['funcionarios' => $funcionarios]);
     }
 

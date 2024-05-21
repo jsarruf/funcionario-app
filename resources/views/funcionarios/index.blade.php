@@ -32,7 +32,7 @@
                                     <td>{{ $funcionario->fun_email }}</td>
                                     <td>{{ $funcionario->fun_cpf }}</td>
                                     <td>{{ $funcionario->fun_idade }}</td>
-                                    <td>{{ $funcionario->dept_cod }}</td>
+                                    <td>{{ $funcionario->departamento->dept_nome ?? 'Sem Departamento' }}</td>
                                     <td>
                                         <a href="{{ route('funcionarios.show', $funcionario->id) }}" class="btn btn-info">Ver</a>
                                         <a href="{{ route('funcionarios.edit', $funcionario->id) }}" class="btn btn-primary">Editar</a>

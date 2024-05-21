@@ -14,4 +14,9 @@ class TbDepartamento extends Model
     protected $fillable = [
         'dept_nome',
     ];
+
+    public function funcionarios()
+    {
+        return $this->hasMany(TbFuncionario::class, 'dept_cod');
+    }
 }

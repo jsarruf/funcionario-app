@@ -19,11 +19,11 @@
                 <input type="number" name="fun_idade" id="idade" class="form-control">
             </div>
             <div class="form-group">
-            <select class="form-control" name="dept_codigo">
-                @foreach($departamentos as $deparatamento)
-                <option value="{{$deparatamento->id}}">{{$deparatamento->dept_nome}}</option>
-                @endforeach
-            </select>
+                <select class="form-control" name="dept_codigo">
+                    @foreach($departamentos as $deparatamento)
+                    <option value="{{$deparatamento->id}}">{{$deparatamento->dept_nome}}</option>
+                    @endforeach
+                </select>
             </div>
             <button type="submit" class="btn btn-primary">Salvar</button>
         </form>
