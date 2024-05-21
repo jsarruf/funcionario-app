@@ -20,7 +20,7 @@
                                     <th>Email</th>
                                     <th>CPF</th>
                                     <th>Idade</th>
-                                    <th>Categoria</th>
+                                    <th>Departamento</th>
                                     <th>Ações</th>
                                 </tr>
                             </thead>

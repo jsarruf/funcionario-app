@@ -43,13 +43,8 @@
                         @endforeach
                     </select>
 
-                    <label for="horas_inicio">Horas Início:</label>
-                    <input type="text" id="horas_inicio" name="horas_inicio" placeholder="Digite as hora início">
-                    <input type="time" id="appt-time" name="appt-time" min="09:00" max="18:00" step="1800">
-
-
-                    <label for="horas_fim">Horas Fim:</label>
-                    <input type="text" id="horas_fim" name="horas_fim" placeholder="Digite as hora final">
+                    <label for="hora">Informe uma hora (formato HH:MM):</label>
+                    <input type="text" id="hora" name="hora" placeholder="Ex: 09:30" required>
 
                     <input type="submit" value="Registrar Horas">
                 </form>
@@ -57,6 +52,7 @@
             </div>
         </div>
     </div>
+
 
 </x-app-layout>
 

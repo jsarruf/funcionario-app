@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 
 class Funcionario extends Controller
 {
-    //class Funcionario {
     private $nome;
     private $email;
     private $cpf;
