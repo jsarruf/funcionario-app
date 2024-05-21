@@ -49,4 +49,10 @@ class Funcionario extends Controller
         return "Nome: " . $this->nome . "\nEmail: " . $this->email . "\nCPF: " . $this->cpf . "\nIdade: " . $this->idade . "\nDepartamento: " . $this->departamento->getNome();
     }
 
+
+    public function index()
+    {
+        $funcionarios = Funcionario::all();
+        return view('funcionarios.index', ['funcionarios' => $funcionarios]);
+    }
 }
