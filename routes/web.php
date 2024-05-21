@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FuncionarioController;
 use App\Http\Controllers\FuncionariosController;
 use App\Http\Controllers\DepartamentosController;
+use App\Http\Controllers\HorasController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,8 +19,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-
-
 
 Route::get('/funcionarios', [FuncionariosController::class, 'index'])->name('funcionarios.index');
 Route::get('/funcionarios/create', [FuncionariosController::class, 'create'])->name('funcionarios.create');
@@ -37,6 +35,8 @@ Route::get('/departamentos/{id}/edit', [DepartamentosController::class, 'edit'])
 Route::put('/departamentos/{id}', [DepartamentosController::class, 'update'])->name('departamentos.update');
 Route::delete('/departamentos/{id}', [DepartamentosController::class, 'destroy'])->name('departamentos.destroy');
 
+Route::get('/horas', [HorasController::class, 'index'])->name('horas.index');
+Route::get('/gerarhoras/{funcionario}', [HorasController::class, 'gerar'])->name('horas.gerar');
 
 
 require __DIR__.'/auth.php';
