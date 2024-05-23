@@ -34,7 +34,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
-                <form action="/submit_hours" method="post">
+
                     <label for="funcionario">Selecione o Funcionário:</label>
                     
                     <select id="funcionario" name="funcionario">
@@ -43,11 +43,38 @@
                         @endforeach
                     </select>
 
-                    <label for="hora">Informe o Horário (formato HH:MM):</label>
-                    <input type="text" id="hora" name="hora" placeholder="Ex: 09:30" required>
-
-                    <input type="submit" value="Registrar Horas">
-                </form>
+                    <script>
+                        function verificarHoraUtil() {
+                            const datetime = document.getElementById('datetime').value;
+                            const resultadoElem = document.getElementById('resultado');
+                            fetch(`/verificar-hora-util?datetime=${encodeURIComponent(datetime)}`)
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.is_hora_util){
+                                        resultadoElem.innerText =  'É hora útil';
+                                        resultadoElem.className = 'alert alert-success';
+                                    }
+                                        else
+                                    {    
+                                        resultadoElem.innerText =  'Não é hora útil';                                    
+                                        resultadoElem.className = 'alert alert-danger';
+                                    }                                                          
+                                })
+                                .catch(error => console.error('Erro:', error));
+                                resultadoElem.innerText = 'Erro: ' + error.message;
+                                resultadoElem.className = 'alert alert-danger';
+                        }
+                    </script>
+            
+ 
+                    <div>
+                        <label for="datetime">Data e Hora:</label>
+                        <input type="time" id="datetime">
+                        <button class="btn btn-success" type="submit" onclick="verificarHoraUtil()">Verificar</button>
+                    </div>
+                    <div id="resultado"></div>
+         
+          
                 </div>
             </div>
         </div>

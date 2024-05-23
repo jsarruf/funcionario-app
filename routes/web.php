@@ -37,6 +37,6 @@ Route::delete('/departamentos/{id}', [DepartamentosController::class, 'destroy']
 
 Route::get('/horas', [HorasController::class, 'index'])->name('horas.index');
 Route::get('/gerarhoras/{funcionario}', [HorasController::class, 'gerar'])->name('horas.gerar');
-
+Route::get('/verificar-hora-util', [HorasController::class, 'verificarHoraUtil']);
 
 require __DIR__.'/auth.php';
